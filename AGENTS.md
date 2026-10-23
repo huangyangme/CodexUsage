@@ -1,6 +1,6 @@
 # 项目说明
 
-- 使用 Swift / AppKit，部署目标 macOS 13，保持无第三方依赖。
+- 使用 Swift / AppKit，部署目标 macOS 14（Sonoma），支持 Apple Silicon（M1 及更新）与 Intel，保持无第三方依赖。
 - 修改前阅读 README.md 与相关源码，保持改动范围清晰。
 - 运行 `./build.sh` 验证构建，运行 `git diff --check` 检查格式。
 - 界面变化需要区分编译通过与实际菜单栏视觉验证。

@@ -16,7 +16,8 @@
 
 ## 环境要求
 
-- macOS 13 或更高版本。
+- macOS 14（Sonoma）或更高版本，不支持 macOS 13。
+- Apple Silicon（M1 及更新）或 Intel 处理器。
 - 可用的 Codex CLI，且已使用 ChatGPT 账号登录。工具也会尝试使用 ChatGPT / Codex 桌面应用内置的 CLI。
 - 构建需要 Xcode 15 或更高版本，或包含 Swift 5.9+ 的 Command Line Tools。
 

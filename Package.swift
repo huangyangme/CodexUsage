@@ -3,7 +3,7 @@ import PackageDescription
 
 let package = Package(
     name: "CodexUsage",
-    platforms: [.macOS(.v13)],
+    platforms: [.macOS(.v14)],
     products: [.executable(name: "CodexUsage", targets: ["CodexUsage"])],
     targets: [.executableTarget(name: "CodexUsage", linkerSettings: [.linkedFramework("AppKit")])]
 )
