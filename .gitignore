@@ -1,0 +1,15 @@
+.DS_Store
+.AppleDouble
+.build/
+.swiftpm/
+build/
+dist/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+*.app/
+*.dSYM/
+*.zip
+.env
+.env.*
+!.env.example
