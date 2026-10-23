@@ -160,11 +160,14 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         } else { status.button?.title = loading ? " …" : " —" }
         status.button?.toolTip = "Codex 剩余用量 · 每 60 秒刷新" + (failure == nil ? "" : " · 数据可能已过期")
         menu.removeAllItems()
-        row("Codex 剩余用量")
+        row("CodexUsage")
         menu.addItem(.separator())
         if let limits {
             for (key, bucket) in limits.buckets {
-                row(bucket.limitName ?? key)
+                let bucketTitle = bucket.limitName ?? key
+                if bucketTitle.caseInsensitiveCompare("codex") != .orderedSame {
+                    row(bucketTitle)
+                }
                 for window in [bucket.primary, bucket.secondary].compactMap({ $0 }) {
                     row("\(window.label) · 剩余 \(window.remaining)%")
                     if let reset = window.resetsAt {
