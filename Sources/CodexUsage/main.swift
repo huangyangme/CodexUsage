@@ -82,38 +82,27 @@ func fetchLimits(executable: String) throws -> Limits {
     }
 }
 
-// A compact vector companion head, drawn at native menu-bar size.
+// A minimal template version of the original companion face.
 func companionIcon() -> NSImage {
     let image = NSImage(size: NSSize(width: 20, height: 18), flipped: false) { _ in
-        let outline = NSColor(calibratedRed: 0.10, green: 0.18, blue: 0.43, alpha: 1)
-        let shell = NSBezierPath()
-        shell.move(to: NSPoint(x: 1, y: 5))
-        for (x, y) in [(1,12),(3,12),(3,15),(6,15),(6,17),(12,17),(12,16),(15,16),(15,14),(17,14),(17,12),(19,12),(19,5),(17,5),(17,2),(14,2),(14,1),(5,1),(5,2),(3,2),(3,5)] {
-            shell.line(to: NSPoint(x: x, y: y))
-        }
-        shell.close()
-        NSColor(calibratedRed: 0.35, green: 0.50, blue: 0.98, alpha: 1).setFill()
-        shell.fill()
-        outline.setStroke()
-        shell.lineWidth = 1
-        shell.stroke()
-        let screen = NSBezierPath(roundedRect: NSRect(x: 4, y: 4, width: 12, height: 9), xRadius: 2, yRadius: 2)
-        outline.setFill()
-        screen.fill()
+        NSColor.black.setStroke()
+        let screen = NSBezierPath(roundedRect: NSRect(x: 3, y: 2.5, width: 14, height: 12), xRadius: 2.5, yRadius: 2.5)
+        screen.lineWidth = 1
+        screen.stroke()
+
         let face = NSBezierPath()
-        face.move(to: NSPoint(x: 6.5, y: 10.5))
-        face.line(to: NSPoint(x: 9, y: 8.5))
-        face.line(to: NSPoint(x: 6.5, y: 6.5))
-        face.move(to: NSPoint(x: 11, y: 6.5))
-        face.line(to: NSPoint(x: 14, y: 6.5))
+        face.move(to: NSPoint(x: 6, y: 10.5))
+        face.line(to: NSPoint(x: 8.5, y: 8.5))
+        face.line(to: NSPoint(x: 6, y: 6.5))
+        face.move(to: NSPoint(x: 11.5, y: 6.5))
+        face.line(to: NSPoint(x: 14.5, y: 6.5))
         face.lineWidth = 1.5
         face.lineCapStyle = .round
         face.lineJoinStyle = .round
-        NSColor(calibratedRed: 0.51, green: 0.96, blue: 1, alpha: 1).setStroke()
         face.stroke()
         return true
     }
-    image.isTemplate = false
+    image.isTemplate = true
     return image
 }
 
